@@ -1,29 +1,32 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { timelineData } from "@/data/timeline";
+import Timeline from "@/components/Timeline";
 
 export default function Home() {
   return (
-    <main className="space-y-12 text-[#333]">
-      {/* Header / Bio Section */}
+    <main className="space-y-16 text-[#333]">
+      {/* Bio Section */}
       <section className="space-y-4">
-        <h1 className="text-4xl font-bold text-black tracking-tight">User Name</h1>
+        <h1 className="text-4xl font-bold text-black tracking-tight">Plamen Nikolov, PhD</h1>
         <div className="prose prose-neutral max-w-none text-[17px] leading-relaxed">
           <p>
-            I am a researcher/engineer with a background in <b>Brain-Computer Interfaces (BCI)</b>,
-            <b>Cardiac Electrophysiology</b>, and <b>Computational Neuroscience</b>.
-          </p>
-          <p>
-            Currently, I am working on [Current Role/Goal]. This website hosts my <Link href="/cv" className="text-blue-700 hover:underline">CV</Link>,
-            descriptions of my <Link href="#projects" className="text-blue-700 hover:underline">projects</Link>,
-            and a <Link href="/blog" className="text-blue-700 hover:underline">technical blog</Link>.
+            I am a <b>Post-Doctoral Research Affiliate</b> at Georgetown University Medical Center, specializing in
+            <b> Computational Neuroscience</b>, <b>Signal Processing</b>, and <b>Machine Learning</b>.
+            My work spans BCI systems, cardiac digital twins, and neural dynamics of speech.
           </p>
           <p className="space-x-4 pt-2">
-            <a href="mailto:your.email@example.com" className="text-blue-700 hover:underline">Email</a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">GitHub</a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Twitter</a>
-            <a href="#" className="text-blue-700 hover:underline">Google Scholar</a>
+            <a href="mailto:Nikolov.phd@gmail.com" className="text-blue-700 hover:underline">Email</a>
+            <a href="https://github.com/Nikolovpp" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">GitHub</a>
+            {/* Add other links if available */}
           </p>
         </div>
+      </section>
+
+      {/* Education & Experience Timeline */}
+      <section id="bio" className="space-y-6">
+        <h2 className="text-2xl font-bold text-black border-b border-gray-200 pb-2">Bio / Timeline</h2>
+        <Timeline items={timelineData} />
       </section>
 
       {/* Projects Section */}
@@ -56,7 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Section (Placeholder) */}
+      {/* Blog Section */}
       <section id="blog" className="space-y-6">
         <h2 className="text-2xl font-bold text-black border-b border-gray-200 pb-2">Recent Posts</h2>
         <ul className="list-disc list-inside space-y-2 text-gray-700 pl-2">
@@ -65,13 +68,11 @@ export default function Home() {
               View all posts
             </Link>
           </li>
-          {/* Example post format */}
-          {/* <li><Link href="/blog/post-1" className="text-blue-700 hover:underline">My First Blog Post</Link> <span className="text-gray-400 text-sm ml-2">Dec 2025</span></li> */}
         </ul>
       </section>
 
       <footer className="pt-12 pb-8 text-sm text-gray-400 border-t border-gray-100 mt-12">
-        <p>© {new Date().getFullYear()} User Name. Built with Next.js & Tailwind CSS.</p>
+        <p>© {new Date().getFullYear()} Plamen Nikolov. Built with Next.js & Tailwind CSS.</p>
       </footer>
     </main>
   );
