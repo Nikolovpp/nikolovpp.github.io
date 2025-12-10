@@ -30,20 +30,32 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="space-y-6">
+      <section id="projects" className="space-y-8">
         <h2 className="text-2xl font-bold text-black border-b border-gray-200 pb-2">Research & Projects</h2>
-        <div className="space-y-6">
+        <div className="space-y-10">
           {projects.map((project, index) => (
             <div key={index} className="group">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                <h3 className="text-lg font-semibold text-black">
+                <h3 className="text-lg font-bold text-black">
                   {project.title}
                 </h3>
                 <span className="text-sm text-gray-500 font-mono">{project.year}</span>
               </div>
-              <p className="text-gray-700 mb-2 max-w-2xl text-[16px] leading-[1.6]">
+              <div className="mb-3 text-sm text-gray-600 font-medium">
+                {project.role} @ {project.institution}
+              </div>
+
+              <div className="text-gray-800 mb-3 text-[16px] leading-relaxed">
                 {project.description}
-              </p>
+              </div>
+
+              {/* Detailed Points */}
+              <ul className="list-disc list-outside ml-4 mb-4 space-y-1 text-gray-700 text-[15px] leading-relaxed">
+                {project.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+
               <div className="space-x-3 text-sm">
                 {project.links.map((link, i) => (
                   <a key={i} href={link.url} className="text-blue-700 hover:underline">
