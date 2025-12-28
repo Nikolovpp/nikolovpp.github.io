@@ -3,6 +3,7 @@ export interface TimelineItem {
     role: string;
     institution: string;
     description?: string;
+    logo?: string;
     // points key removed as we moved details to projects
 }
 
