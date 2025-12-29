@@ -18,7 +18,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                         )}
 
                         {/* Marker / Logo */}
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white border border-gray-200 overflow-hidden z-10">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white border border-gray-200 overflow-hidden z-10">
                             {item.logo ? (
                                 <img
                                     src={item.logo}
