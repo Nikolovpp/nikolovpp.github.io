@@ -9,7 +9,7 @@ export interface TimelineItem {
 
 export const timelineData: TimelineItem[] = [
     {
-        year: "2024 - Present",
+        year: "2024",
         role: "Post-Doctoral Research Affiliate",
         institution: "Georgetown University Medical Center",
         description: "Computational models of speech processing.",
