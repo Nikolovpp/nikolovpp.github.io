@@ -5,20 +5,17 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
         <div className="relative">
             {items.map((item, index) => (
                 <div key={index} className="flex gap-4 sm:gap-6">
-                    {/* Left Column: Year */}
-                    <div className="w-24 sm:w-32 flex-shrink-0 text-right pt-0.5">
-                        <span className="font-mono text-gray-500 text-sm">{item.year}</span>
-                    </div>
-
-                    {/* Middle Column: Vertical Line & Marker */}
-                    <div className="relative flex flex-col items-center">
+                    {/* Date/Timeline Column */}
+                    <div className="relative flex flex-col items-center w-24 sm:w-32 flex-shrink-0 pt-0.5">
                         {/* Vertical Line */}
                         {index !== items.length - 1 && (
-                            <div className="absolute top-2.5 bottom-0 w-px bg-gray-200 -z-10" />
+                            <div className="absolute top-0 bottom-0 w-px bg-gray-200 -z-10" />
                         )}
 
-                        {/* Simple Dot Marker */}
-                        <div className="h-2 w-2 rounded-full bg-gray-300 mt-2 shrink-0" />
+                        {/* Year on the line */}
+                        <span className="font-mono text-gray-500 text-sm bg-[#fafafa] px-2 z-10">
+                            {item.year}
+                        </span>
                     </div>
 
                     {/* Right Column: Content */}
