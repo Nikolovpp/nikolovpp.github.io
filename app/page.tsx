@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import { timelineData } from "@/data/timeline";
+import { featuredTalks } from "@/data/talks";
+import { publications } from "@/data/publications";
 import Timeline from "@/components/Timeline";
+import FeaturedTalks from "@/components/FeaturedTalks";
+import Publications from "@/components/Publications";
 
 export default function Home() {
   return (
@@ -71,16 +75,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Talks */}
+      <section id="talks" className="space-y-6">
+        <h2 className="text-2xl font-bold text-black border-b border-gray-200 pb-2">Featured Talks</h2>
+        <FeaturedTalks talks={featuredTalks} />
+      </section>
+
+      {/* Publications */}
+      <section id="publications" className="space-y-6">
+        <h2 className="text-2xl font-bold text-black border-b border-gray-200 pb-2">Publications</h2>
+        <Publications publications={publications} />
+      </section>
+
       {/* Blog Section */}
       <section id="blog" className="space-y-6">
-        <h2 className="text-2xl font-bold text-black border-b border-gray-200 pb-2">Recent Posts</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 pl-2">
-          <li>
-            <Link href="/blog" className="text-blue-700 hover:underline">
-              View all posts
-            </Link>
-          </li>
-        </ul>
+        <h2 className="text-2xl font-bold text-black border-b border-gray-200 pb-2">Blog</h2>
+        <p className="text-[17px] leading-relaxed text-gray-700">
+          I write about neuroscience, AI, and machine learning. <a href="https://nikolovpp.bearblog.dev/" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Check out my blog here</a>.
+        </p>
       </section>
 
       <footer className="pt-12 pb-8 text-sm text-gray-400 border-t border-gray-100 mt-12">
