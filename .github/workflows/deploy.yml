@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Next.js site to GitHub Pages
-# Use this to auto-deploy when you push to main!
+# Use this to auto-deploy when you push to main! (Refreshed to resolve IDE resolution issues)
 
 name: Deploy to GitHub Pages
 
